@@ -1,8 +1,8 @@
 var Hoist = require('@hoist/node-sdk');
-
-//Use your API key from the Dashboard of your application
-Hoist.setApiKey("");
-
+console.log('raising sample event');
+Hoist.setApiKey("6S1yaWVN0IYcvlylwMcURVad7dIraXJF");
 Hoist.raise("signup", {
     "email":"adrian@iceknife.com"
 });
+
+console.log('sent sample event');

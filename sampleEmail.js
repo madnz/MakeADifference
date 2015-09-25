@@ -1,12 +1,10 @@
-/**
- * Created by adrian on 25/09/15.
- */
 var Sendgrid = require("sendgrid-web");
 
 var sendgrid = new Sendgrid({
     user: "madnz",
     key: "PASSWORD"
 });
+
 sendgrid.send({
     to: 'adrian@iceknife.com',
     from: 'madnz@iceknife.com',

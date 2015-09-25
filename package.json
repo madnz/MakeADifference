@@ -1,0 +1,11 @@
+{
+    "name": "MakeADifference",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/madnz/MakeADifference.git"
+    },
+    "dependencies": {
+        "sendgrid-web": "0.0.5"
+    },
+    "license": "MIT"
+}

@@ -21,9 +21,11 @@ function volunteers() {
     var volunteersRef = firebase.child('volunteers');
     volunteersRef.on("value", function (snapshot) {
         if (snapshot.hasChildren()) {
-            volunteerTable = '<table><thead><tr><th>Name</th><th>Email</th><th>Skills</th></tr></thead><tbody>';
+            volunteerTable = '<table id="volunteerTable"><thead><tr><th>Name</th><th>Email</th><th>Skills</th></tr></thead><tbody>';
             snapshot.forEach(generateVolunteerHTML);
             volunteerTable += '</tbody></table>';
+            // add link for exporting to csv
+            volunteerTable += '<br/><a download="volunteer.csv" href="#" onclick="return ExcellentExport.csv(this, \'volunteerTable\');">Export to CSV</a>';
             showInWorkArea(volunteerTable);
         } else {
             showInWorkArea('<h4>No volunteers available</h4>');

@@ -4,10 +4,15 @@
     <title></title>
 </head>
 <body>
-
-<button id="loginButton">Login</button>
-
 <h4>Welcome&nbsp;<span id="welcomeName"></span></h4>
+<button id="loginButton">Login</button>
+<p style="display: none" id="loginInfo">Your role is currently: <span id="role"></span> and your last login was
+    <span id="lastLogin"></span> UTC.
+    <br/>
+    <button style="visibility: hidden" id="volunteersAdminButton">Volunteers Admin</button>
+    <button style="visibility: hidden" id="projectAdminButton">Project Admin</button>
+</p>
+<div id="workArea"></div>
 
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <script src="testLogin.js"></script>

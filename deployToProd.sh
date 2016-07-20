@@ -7,3 +7,4 @@ git commit -m "Update from ./MakeADifference"
 git push
 cd ../MakeADifference/
 echo 'Deploy completed'
+open -a Safari http://madnz.github.io

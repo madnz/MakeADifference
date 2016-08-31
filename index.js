@@ -44,7 +44,7 @@ function generateVacancyLI(vacancy) {
 			+ vacancy.key()
 			+ '\')">Apply</a></p><p class="description closed" id="description'
 			+ vacancy.key() + '">'
-			+ vacancy.vacancyDescription + '</p></div>';
+			+ vacancyObj.vacancyDescription + '</p></div>';
 	appendVacancy(text);
 }
 

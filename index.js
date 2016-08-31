@@ -95,7 +95,18 @@ function apply(e) {
                 //TODO notify user of form submit failure
             } else {
                 newVolunteerKey = newVolunteer.key();
-                window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
+                var request = new XMLHttpRequest();
+                request.open('POST', 'https://zaa1vg3a3d.execute-api.us-west-2.amazonaws.com/prod', true);
+                request.setRequestHeader('Content-Type', 'application/json');
+                request.onreadystatechange = function() {
+                    if(request.readyState == 4 && request.status == 200) {
+                        window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
+                    } else {
+                        //TODO thank you email failure
+                    }
+
+                }
+                request.send(JSON.stringify(application));
             }
         });
     }

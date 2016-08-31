@@ -28,10 +28,26 @@ window.onload = function () {
 }
 
 function generateVacancyLI(vacancy) {
-    var vacancyObj = vacancy.val(),
-        text = '<div><span>' + vacancyObj.vacancyDates + '</span> in <span>' + vacancyObj.vacancyLocations + '</span><br><span>' + vacancyObj.vacancyName + '</span><br><span>' + vacancyObj.organisationName + '</span> need help with <span>' + vacancyObj.vacancySkills + '</span><br><a href="#" onclick="showVacancyDetails(\''+vacancy.key()+'\')">Details</a> | <a href="#" onclick="applyForVacancy(\''+vacancy.key()+'\')">Apply</a></div>';
-    appendVacancy(text);
+	    var vacancyObj = vacancy.val(), text = '<hr><div><p class="location">'
+			+ vacancyObj.vacancyDates
+			+ ' in '
+			+ vacancyObj.vacancyLocations
+			+ '</p><p class="name">'
+			+ vacancyObj.vacancyName
+			+ '</p><p class="details">'
+			+ vacancyObj.organisationName
+			+ ' need help with '
+			+ vacancyObj.vacancySkills
+			+ '</p><p><button id="showDetails" onclick="document.getElementById(\'description'
+			+ vacancy.key()
+			+ '\').classList.toggle(\'closed\');">Details</button> | <a href="#" onclick="applyForVacancy(\''
+			+ vacancy.key()
+			+ '\')">Apply</a></p><p class="description closed" id="description'
+			+ vacancy.key() + '">'
+			+ vacancy.vacancyDescription + '</p></div>';
+	appendVacancy(text);
 }
+
 
 function showVacancyDetails(key) {
     console.log('showing vacancy details for '+key);
